@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Empleado>
+
+<h2>Empleados</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Nuevo Empleado</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Posición</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.Nombre</td>
+                <td>@e.Apellido</td>
+                <td>@e.Email</td>
+                <td>@e.Posicion</td>
+            </tr>
+        }
+    </tbody>
+</table>

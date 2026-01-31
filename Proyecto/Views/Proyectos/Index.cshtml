@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Proyecto>
+
+<h2>Listado de Proyectos</h2>
+
+<a asp-action="Create" class="btn btn-primary">Nuevo Proyecto</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Inicio</th>
+            <th>Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Nombre</td>
+                <td>@p.Descripcion</td>
+                <td>@p.FechaInicio.ToShortDateString()</td>
+                <td>@p.FechaFin.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

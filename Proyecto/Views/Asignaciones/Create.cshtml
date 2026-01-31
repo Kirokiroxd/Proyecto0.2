@@ -1,0 +1,28 @@
+﻿@model Asignacion
+
+<h2>Asignar Empleado a Proyecto</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="mb-2">
+        <label>Proyecto</label>
+        <select asp-for="ProyectoId"
+                asp-items="ViewBag.Proyectos"
+                class="form-control"></select>
+    </div>
+
+    <div class="mb-2">
+        <label>Empleado</label>
+        <select asp-for="EmpleadoId"
+                asp-items="ViewBag.Empleados"
+                class="form-control"></select>
+    </div>
+
+    <div class="mb-2">
+        <label>Rol en el Proyecto</label>
+        <input asp-for="RolEnProyecto" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary mt-2">Asignar</button>
+    <a asp-controller="Proyectos" asp-action="Index" class="btn btn-secondary mt-2">Volver</a>
+</form>
